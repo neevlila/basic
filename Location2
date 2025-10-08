@@ -1,0 +1,37 @@
+import requests
+
+# Numverify API key
+api_key = 'Numverify API key'
+
+# Phone number to look up
+phone_number = 'Phone Number with Country Code'  # Replace with a valid phone number
+
+# Numverify API endpoint
+url = f'http://apilayer.net/api/validate?access_key={api_key}&number={phone_number}'
+
+# Send GET request to Numverify API
+response = requests.get(url)
+
+# Parse JSON response
+data = response.json()
+
+# Check if the phone number is valid
+if data['valid']:
+    # Print location and carrier information
+    print(f"Country Code: {data['country_code']}")
+    print(f"Country Name: {data['country_name']}")
+    print(f"International Format: {data['international_format']}")
+    print(f"Location: {data['location']}")
+    print(f"Carrier: {data['carrier']}")
+    print(f"Line Type: {data['line_type']}")
+else:
+    print("Invalid phone number")
+
+
+# Output : 
+# Country Code: Country Code
+# Country Name: Country Name
+# International Format: Phone no.
+# Location: State
+# Carrier: Sim Card Company Name
+# Line Type: Device
