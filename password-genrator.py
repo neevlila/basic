@@ -1,4 +1,3 @@
-# it will generat a random strong password
 # pip install random
 
 import random
