@@ -1,4 +1,3 @@
-# you need to install first pip to generate qr code
 # pip install qrcode
 
 import qrcode
